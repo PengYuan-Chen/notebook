@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: 100px;
+            font-weight: bold;
+            font-size: 60px;
+            height: 200px;
+            color: rgb(51, 194, 147);
+            background-color: rgb(166, 255, 225);
+        }
+        span{
+           line-height:150px;
+           margin-left: 50px;
+        }
+        a{
+            text-decoration: none;
+            display: block;
+            font-size: 20px;
+            color: rgb(51, 194, 147);
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span>更新成功</span>
+        <a href='<%= url %>'><%= msg %></a>
+    </div>
+</body>
+</html>

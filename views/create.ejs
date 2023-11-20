@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+<body>
+    <div class="container">
+        <h2 id="header">添加紀錄</h2>
+        <hr>
+        <form action="/account" method="post">
+            事項<input type="text" name="title">
+            時間<input type="text" name="time">
+            類型<select name="kind" >
+                <option value="-1">支出</option>
+                <option value="1">收入</option>
+                </select>
+            金額<input type="number" name="dollar">
+            備註<input type="text" name="other">
+            <button>提交</button>
+        </form>
+    </div>
+</body>
+</html>

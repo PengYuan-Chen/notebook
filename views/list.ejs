@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #header{
+        font-size: 40px;
+        padding: 10px;
+    }
+    .container{
+        width: 1000px;
+ 
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+    #date{
+        background-color:lightgreen;
+        padding:12px 0;       
+        padding-left: 10px;
+        font-size: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color:green
+    }
+    #date1{
+        background-color: pink;
+        padding:12px 0;       
+        padding-left: 10px;
+        font-size: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color:rgb(203, 58, 107)
+    }
+    .content{
+        height: 120px;
+        border-radius: 10px;
+        border: 2px solid lightgreen;
+        margin-top: 50px;
+    }
+    .content1{
+        height: 120px;
+        border-radius: 10px;
+        border: 2px solid pink;
+        margin-top: 50px;
+    }
+    ul{
+        list-style: none;
+        font-size: 20px;
+    }
+    li{
+        float: left;
+    }
+    span{
+        float: right;
+        margin: 25px 10px;
+        font-size: 30px;
+        display: none;
+        font-weight: bold;
+        cursor: pointer;
+        color: aquamarine;
+    }
+    .one{
+        margin: 25px 50px;
+    }
+    .two{
+        margin: 25px 200px;
+        background-color: green;
+        border-radius: 3px;
+        color:white;
+        padding: 3px;
+    }
+    .two1{
+        margin: 25px 200px;
+        background-color: orange;
+        border-radius: 3px;
+        color:white;
+        padding: 3px;
+    }
+    .three{
+        margin: 25px 50px;
+    }
+    </style>
+</head>
+<body> 
+    <div class="container">
+        <h2 id="header">記帳本</h2>
+        <hr>
+        <% accounts.forEach(item=>{ %>
+        <div class="con  <%= item.kind=='1'? 'content' : 'content1' %>">
+            <h2 id="<%= item.kind=='1'? 'date' : 'date1' %>"><%=item.time %></h2>         
+            <ul>
+                <li class="one"><%= item.title %></li>
+                <li class="<%= item.kind=='1'? 'two' : 'two1' %>"><%= item.kind=='1'? '收入' : '支出' %></li>
+                <li class="three"><%= item.dollar %>元</li>
+            </ul>
+            <a href="/account/<%= item.id %>"><span>×</span></a>            
+            <a href="/account/change/<%= item.id %>"><span>⟳</span></a>
+        </div>
+        <% }) %>
+    </div>
+    <script src="/js/list.js"></script>
+</body>
+</html>
