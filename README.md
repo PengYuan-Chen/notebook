@@ -6,7 +6,7 @@
 服務器搭建
 - 利用 Node.js 的 express 框架建立
 - npm : ejs、express、mongoose、lowdb、md5、shortid、cookie-parser
-- MongoDB 儲存用戶資料
+- MongoDB 儲存用戶資料，Robo 3T 呈現資料庫
 - cookie、sessions 身分校驗
 - Postman 模擬請求返回 json 數據 
 
