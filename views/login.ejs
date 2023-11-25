@@ -14,7 +14,7 @@
         padding: 10px;
     }
     .container{
-        width: 1000px;
+        width: 400px;
         margin: 0 auto;
         margin-top: 100px;
         font-weight: bold;
@@ -23,7 +23,7 @@
     input,select,button{
         display: block;
         height: 40px;
-        width: 1000px;
+        width: 400px;
         margin-bottom:30px;
         margin-top: 10px;
         font-size: 25px;
@@ -40,17 +40,11 @@
 </head>
 <body>
     <div class="container">
-        <h2 id="header">添加紀錄</h2>
+        <h2 id="header">登入</h2>
         <hr>
-        <form action="">
-            事項<input type="text" name="title">
-            時間<input type="text" name="time">
-            類型<select name="kind" >
-                <option value="支出">支出</option>
-                <option value="收入">收入</option>
-                </select>
-            金額<input type="number" name="dollar">
-            備註<input type="text" name="other">
+        <form action="/login"  method="post">
+            帳號<input type="text" name="username">
+            密碼<input type="password" name="password">
             <button>提交</button>
         </form>
     </div>

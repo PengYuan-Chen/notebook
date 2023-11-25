@@ -10,11 +10,11 @@
     <div class="container">
         <h2 id="header">修改</h2>
         <hr>
-        <form action="/account" method="post">
-            事項<input type="text" name="title" value="<%= result.title %>">
-            時間<input type="text" name="time" value="<%= result.time %>">
-            類型<select name="kind">
-                <% if(result.kind =='-1'){ %>
+        <form action="/change/<%= data[0]._id %>" method="post">
+            事項<input type="text" name="title" value="<%= data[0].title %>">
+            時間<input type="date" name="time" value="<%= moment(data[0].time).format('YYYY-MM-DD') %>">
+            類型<select name="type">
+                <% if(data[0].type =='-1'){ %>
                     <option value="-1" selected>支出</option>
                     <option value="1">收入</option>
                 <% }else{ %>
@@ -22,8 +22,8 @@
                     <option value="1" selected>收入</option>
                 <% } %>
                 </select>
-            金額<input type="number" name="dollar" value="<%= result.dollar %>">
-            備註<input type="text" name="other" value="<%= result.other %>">
+            金額<input type="number" name="account" value="<%=data[0].account %>">
+            備註<input type="text" name="remarks" value="<%= data[0].remarks %>">
             <button>提交</button>
         </form>
     </div>

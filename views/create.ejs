@@ -12,13 +12,13 @@
         <hr>
         <form action="/account" method="post">
             事項<input type="text" name="title">
-            時間<input type="text" name="time">
-            類型<select name="kind" >
+            時間<input type="date" name="time">
+            類型<select name="type" >
                 <option value="-1">支出</option>
                 <option value="1">收入</option>
                 </select>
-            金額<input type="number" name="dollar">
-            備註<input type="text" name="other">
+            金額<input type="number" name="account">
+            備註<input type="text" name="remarks">
             <button>提交</button>
         </form>
     </div>

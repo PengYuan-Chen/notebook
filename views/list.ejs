@@ -15,7 +15,6 @@
     }
     .container{
         width: 1000px;
- 
         margin: 0 auto;
         margin-top: 100px;
     }
@@ -85,22 +84,41 @@
     .three{
         margin: 25px 50px;
     }
+    button{
+        float: right;
+        border: none;
+        background-color: skyblue;
+        color: white;
+        height: 50px;
+        width: 100px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    #b2{
+        background-color: brown;
+    }
     </style>
 </head>
 <body> 
     <div class="container">
-        <h2 id="header">記帳本</h2>
+        <h2 id="header">記帳本
+            <a href="/logout"><button id="b2">登出</button></a>
+            <a href="/account/create"><button>添加選單</button></a>  
+            </h2>    
         <hr>
-        <% accounts.forEach(item=>{ %>
-        <div class="con  <%= item.kind=='1'? 'content' : 'content1' %>">
-            <h2 id="<%= item.kind=='1'? 'date' : 'date1' %>"><%=item.time %></h2>         
+        <% data.forEach(item=>{ %>
+        <div class="con  <%= item.type=='1'? 'content' : 'content1' %>">
+            <h2 id="<%= item.type=='1'? 'date' : 'date1' %>"><%= moment(item.time).format('YYYY-MM-DD')  %></h2>         
             <ul>
                 <li class="one"><%= item.title %></li>
-                <li class="<%= item.kind=='1'? 'two' : 'two1' %>"><%= item.kind=='1'? '收入' : '支出' %></li>
-                <li class="three"><%= item.dollar %>元</li>
+                <li class="<%= item.type=='1'? 'two' : 'two1' %>"><%= item.type=='1'? '收入' : '支出' %></li>
+                <li class="three"><%= item.account %>元</li>
             </ul>
-            <a href="/account/<%= item.id %>"><span>×</span></a>            
-            <a href="/account/change/<%= item.id %>"><span>⟳</span></a>
+            <a href="/account/<%= item._id %>"><span>×</span></a>            
+            <a href="/account/change/<%= item._id %>"><span>⟳</span></a>
         </div>
         <% }) %>
     </div>

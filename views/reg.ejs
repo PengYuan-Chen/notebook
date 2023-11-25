@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #header{
+        font-size: 40px;
+        padding: 10px;
+    }
+    .container{
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 100px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    input,select,button{
+        display: block;
+        height: 40px;
+        width: 400px;
+        margin-bottom:30px;
+        margin-top: 10px;
+        font-size: 25px;
+    }
+    button{
+        background-color: skyblue;
+        border: none;
+        cursor: pointer;
+    }
+    hr{
+        margin-bottom: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="header">註冊</h2>
+        <hr>
+        <form action="/reg"  method="post">
+            帳號<input type="text" name="username">
+            密碼<input type="password" name="password">
+            <button>提交</button>
+        </form>
+    </div>
+</body>
+</html>
